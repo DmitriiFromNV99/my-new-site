@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Уравнение крамера</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+   <body>
+    <header>
+        <h1 style="text-align: center; letter-spacing: 3px;font-weight: bold;font-style: italic">Лабораторная работа 3</h1>
+    </header>
+    <br><br><h10 style="text-align: center; letter-spacing: 3px;font-weight: bold;font-style: italic">Уравнение Крамера</h10><br><br><br><br><br><br><br><br><br>
+    <form2>
+       <div2>
+        <input type="text" , id = "A1,1" size="5"> A1 
+        <input type="text" , id = "A1,2" size="5"> A2 
+        <input type="text" , id = "A1,3" size="5"> A3 =  
+        <input type="text" , id = "B1" size="5">
+        </div2> 
+        <div2>
+        <input type="text" , id = "A2,1" size="5"> A1 
+        <input type="text" , id = "A2,2" size="5"> A2 
+        <input type="text" , id = "A2,3" size="5"> A3 =
+        <input type="text" , id = "B2" size="5"> 
+        </div2>  
+        <div2>
+        <input type="text" , id = "A3,1" size="5"> A1 
+        <input type="text" , id = "A3,2" size="5"> A2 
+        <input type="text" , id = "A3,3" size="5"> A3 =
+        <input type="text" , id = "B3" size="5"> 
+        </div2>
+        <br>
+        <div2>
+            <button id = "generate" onClick="myScript()">Сгенерировать элементы</button>  
+        </div2><br>
+        <div2>X1=<input type="text" , id = "X1" size="5"></div2>
+        <div2>X2=<input type="text" , id = "X2" size="5"></div2>
+        <div2>X3=<input type="text" , id = "X3" size="5"></div2>
+        <br>
+        <div2>
+            <button id = "Answer" onClick="myScript2()">Решение Системы</button>  
+        </div2>
+    </form2>
+    <script type="text/javascript">
+      console.log("а вот и скрипт");
+    var coeffixed = [9];
+    var n=0;
+    var X=0;
+    var constantTermsMatrix3x1 = [3];
+      function myScript(){
+    var allidA = ['A1,1', 'A1,2', 'A1,3' ,'A2,1', 'A2,2', 'A2,3' ,'A3,1', 'A3,2', 'A3,3'];
+    var allidB = ['B1', 'B2', 'B3']
+    var coefficientsMatrix3x3 = [[3][3]];
+    var elem1 = [[3][3]];
+    var elem2 = [3];
+    var k=0;
+    print("start: \n");
+    for (var i = 0; i < 3; i++)
+    {
+        for (var j = 0; j < 3; j++)
+        {
+            coefficientsMatrix3x3[[i][j]] = Math.round(Math.random() * 5 + 1);
+            console.log ("A["+ (i+1) + "][" + (j+1) + "]= " + coefficientsMatrix3x3[[i][j]] + "\t ");
+            elem1[[i][j]] = document.getElementById(allidA[k]);
+            console.log (elem1[[i][j]] + "\n");
+           elem1[[i][j]].value = coefficientsMatrix3x3[[i][j]];
+            coeffixed[n] = coefficientsMatrix3x3[[i][j]];
+            n++;
+            k++;
+        }
+        constantTermsMatrix3x1[i] =Math.round (Math.random() * 5 + 1);
+        console.log ("B[" + (i+1) + "]= " + constantTermsMatrix3x1[i] + "\n");
+        elem2[i] = document.getElementById(allidB[i]);
+        elem2[i].value = constantTermsMatrix3x1[i];
+    }
+    return coeffixed, coefficientsMatrix3x3;
+    console.log ("\n");         
+        }
+    function myScript2(){
+    det(coeffixed);
+    det1(coeffixed,constantTermsMatrix3x1);
+    det2(coeffixed,constantTermsMatrix3x1);
+    det3(coeffixed,constantTermsMatrix3x1);
+    function det(arrayA)
+    {
+        var a11 = arrayA[0];
+        var a12 = arrayA[1];
+        var a13 = arrayA[2];
+        var a21 = arrayA[3];
+        var a22 = arrayA[4];
+        var a23 = arrayA[5];
+        var a31 = arrayA[6];
+        var a32 = arrayA[7];
+        var a33 = arrayA[8];
+        X = (a11 * a22 * a33) + (a12 * a23 * a31) + (a13 * a21 * a32) -
+           (a13 * a22 * a31) - (a11 * a23 * a32) - (a12 * a21 * a33);
+    }
+    function det1(arrayA,arrayB)
+    {
+        var a12 = arrayA[1];
+        var a13 = arrayA[2];
+        var a22 = arrayA[4];
+        var a23 = arrayA[5];
+        var a32 = arrayA[7];
+        var a33 = arrayA[8];
+        var c1 = arrayB[0];
+        var c2 = arrayB[1];
+        var c3 = arrayB[2];
+        var X1 = ((c1 * a22 * a33) + (a12 * a23 * c3) + (a13 * c2 * a32) - (a13 * a22 * c3) - (c1 * a23 * a32) - (a12 * c2 * a33)) / X;
+    console.log ("X1 = " + X1);
+        var elem3 = 0;
+         elem3 = document.getElementById("X1");
+         elem3.value = X1.toFixed(2);
+    }
+    function det2(arrayA,arrayB)
+    {
+        var a11 = arrayA[0];
+        var a13 = arrayA[2];
+        var a21 = arrayA[3];
+        var a23 = arrayA[5];
+        var a31 = arrayA[6];
+        var a33 = arrayA[8];
+        var c1 = arrayB[0];
+        var c2 = arrayB[1];
+        var c3 = arrayB[2];
+
+    var X2 = ((a11 * c2 * a33) + (c1 * a23 * a31) + (a13 * a21 * c3) -
+           (a13 * c2 * a31) - (a11 * a23 * c3) - (c1 * a21 * a33))/X;
+        
+       console.log ("X2 = " + X2);
+       var elem4 = 0;
+       elem4 = document.getElementById("X2");
+       elem4.value = X2.toFixed(2);
+    }
+    function det3(arrayA,arrayB)
+    {
+        var a11 = arrayA[0];
+        var a12 = arrayA[1];
+        var a21 = arrayA[3];
+        var a22 = arrayA[5];
+        var a31 = arrayA[6];
+        var a32 = arrayA[7];
+        var c1 = arrayB[0];
+        var c2 = arrayB[1];
+        var c3 = arrayB[2];
+
+    var X3 = ((a11 * a22 * c3) + (a12 * c2 * a31) + (c1 * a21 * a32) -
+           (c1 * a22 * a31) - (a11 * c2 * a32) - (a12 * a21 * c3))/X;
+        console.log ("X3 = " + X3);
+        var elem5 = 0;
+       elem5 = document.getElementById("X3");
+       elem5.value = X3.toFixed(2);
+    }
+        }
+    </script>
+    
+    </body>
+</html>
