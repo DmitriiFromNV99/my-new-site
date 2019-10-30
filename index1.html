@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8"></meta>
+    <title>Мой первый сайт</title>
+    <link rel="stylesheet" href="main.css">
+    </head>
+<body>
+<header>
+    <h1>Сайт начинающего верстальщика</h1>
+    </header>
+    <nav class="main-menu"><a href="index.html">На главную</a></nav>
+    <p class="forP"><img src="myImage.jpg" width="140" height="140"></p>
+    
+  <main>      
+      
+          <h2>Задание 2.1</h2>
+          <br>
+          <table border="1">
+              <tr>
+                  <td colspan="5" style="width:500px"></td>
+                  <!--<td style="width:80px"></td>
+                  <td style="width:80px"></td>
+                  <td style="width:80px"></td>
+                  <td style="width:80px"></td>-->
+              </tr>
+          <tr>
+                  <td rowspan="3"></td>
+                  <td></td>
+                  <td rowspan="3"></td>
+                <td></td>
+              <td></td>
+                  
+              </tr>
+        <tr>
+                  <td rowspan="3"></td>
+                  <td rowspan="3"></td>
+                  <td></td>
+                   
+        </tr>
+        <tr>
+                  <td></td>      
+        </tr>
+        <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                       
+        </tr>
+          </table>
+          
+      <h2>Задание 2.2</h2>
+      <table>
+          <tr>
+              <td colspan="8" style="width:160px" bgcolor=#00FA9A></td>
+              
+          </tr>
+          <tr>
+              <td rowspan="6" bgcolor=#FFFACD></td>
+              <td colspan="6" bgcolor=#00FA9A></td>
+              
+              <td rowspan="6" bgcolor=#FFFACD></td>
+          </tr>
+          <tr>
+              
+                            
+                <td rowspan="4" bgcolor=#FFFACD></td>
+              <td colspan="4" bgcolor=#00FA9A></td>
+              
+              <td rowspan="4" bgcolor=#FFFACD></td>
+              
+          </tr>
+          <tr>
+              
+              
+              <td rowspan="2" bgcolor=#FFFACD></td>
+              <td bgcolor=#ff0000></td>
+              <td bgcolor=#0000CD></td>
+              <td rowspan="2" bgcolor=#FFFACD></td>
+              
+              
+          </tr>
+          <tr>   
+              <td bgcolor=#00FF00></td>
+              <td bgcolor=#FFFF00></td>   
+          </tr>
+          <tr>    
+              <td colspan="4" bgcolor=#00FA9A></td>
+          </tr>
+          <tr>
+             
+              <td colspan="6" bgcolor=#00FA9A></td>
+              
+              
+          </tr>
+          <tr>
+              <td colspan="8" bgcolor=#00FA9A></td>
+          </tr>
+      
+      
+      </table>
+      
+      <h2>Задание 3.1</h2>
+      <h2 style="text-align: left">ЗАО ПТИЦЕФАБРИКА №1</h2>
+      <form>
+          <div>
+              <label for="Фамилия">Фамилия </label>
+              <input type="text" id="Фамилия">
+          </div>
+          <div>
+              <label for="Инициалы">Инициалы</label>
+              <input type="text" id="Инициалы">
+          </div>
+      <div>
+              <label for="Пароль">Пароль</label>
+              <input type="password" id="Пароль">
+          </div>
+        <div>
+              <label for="Адрес получателя">Адрес получателя</label>
+              <input type="email" name="Адрес получателя" size="50">
+          </div>
+          <div>
+              <label for="Количество">Количество</label>
+              <input type="number" id="Количество">
+          </div>
+          <div>
+              <label for="Тип">Тип</label>
+              <select>
+                  <option>Куриные</option>
+              </select>
+              <select>
+                  <option>Отборные</option>
+              </select>
+          </div>
+          <div>
+          <label>Доставка</label>
+          <input type="radio" value="Почтой" name="Почтой">
+              Почтой
+            <input type="radio" value="Электронно" name="Электронно">
+              Электронно
+              <input type="radio" value="Курьером" name="Курьером">
+              Курьером
+          </div>
+          <div>
+          <label for="накладная">Требуется накладная</label>
+              <input type="checkbox" id="накладная">
+          </div>
+          <div>
+              <label style="text-align: center">Дополнительная информация</label>
+              <textarea cols="50"></textarea>
+          </div>
+          
+      </form>
+      <br>
+      <input type="button" value="Заказать">
+          <input type="button" value="Отменить">
+      
+      
+      <h2>Задание 3.2</h2>
+      <form>
+          <fieldset>
+              <legend align="center">ПРИМЕР ФОРМЫ РЕГИСТРАЦИИ САЙТА</legend>
+              <div>
+                  <lable for="login">Логин:</lable>
+                  <br>
+                  <input type="text" id="login">
+              </div>
+              <div>
+                  <lable for="password">Пароль:</lable>
+                  <br>
+                  <input type="password" id="password">
+              </div>
+              <div>
+                  <lable for="url">URL-адрес сайта:</lable>
+                  <br>
+                  <input type="url" id="url">
+              </div>
+              <div>
+                  <lable for="sitename">Название сайта:</lable>
+                  <br>
+                  <input type="text" id="sitename">
+              </div>
+              <div>
+                  <lable for="sitedescription">Описание сайта:</lable>
+                  <br>
+                  <textarea id="sitedescription" rows="8" cols="60"></textarea>
+              </div>
+              <div>
+                  <label for="sitetopic">Тема сайта:</label>
+                  <br>
+              <select id="sitetopic">
+                  <option value="Тема не выбрана">Тема не  выбрана</option>
+                  <option value="О азах вёрстки сайта">О азах вёрстки сайта</option>
+                  <option value="JavaScript">JavaScript</option>
+                  </select>
+                  
+              </div>
+              <div>
+                  <label for="choosefile">Баннер 88х31:</label>
+                  <br>
+                  <input type="file" id="choosefile" value="Обзор...">
+              </div>
+              <div>
+              <p><button type="reset">Очистить</button>
+                <button type="submit">Отправить</button></p>
+              </div>
+          </fieldset>
+      
+      </form>
+    </main>
+    <footer style="text-align: center">
+    <p>Место для рекламы.</p>
+    </footer>
+</body>
+</html>
