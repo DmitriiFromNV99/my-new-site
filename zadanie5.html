@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Мой сайт</title>
+     <link rel="stylesheet" href="mainZadanie5.css"> 
+    </head>
+    <body>
+        <header style="font-size: 30px;">Задание №5</header>
+        <br>
+        <form>
+        <div class="all">
+        <div class="div">
+        <input type="text" size="3" id="a11" name="digit"> x1
+        <input type="text" size="3" id="a12" name="digit"> x2
+        <input type="text" size="3" id="a13" name="digit"> x3 =
+         <input type="text" size="3" id = "y1" name="digit"> 
+        </div>
+        <br>
+        <div class="div">
+        <input type="text" size="3" id="a21" name="digit"> x1
+        <input type="text" size="3" id="a22" name="digit"> x2
+        <input type="text" size="3" id="a23" name="digit"> x3 =
+         <input type="text" size="3" id = "y2" name="digit">  
+        </div>
+        <br>
+        <div class="div">
+        <input type="text" size="3" id="a31" name="digit"> x1
+        <input type="text" size="3" id="a32" name="digit"> x2
+        <input type="text" size="3" id="a33" name="digit"> x3 =
+         <input type="text" size="3" id = "y3" name="digit">  
+        </div>
+        </div>
+        <br><br>
+        <div>
+        <input type="button" id="b1" value="Сгенерировать коэффициенты" onClick="generateDigits()">
+        </div>
+        <br>
+        <div><strong>X1 = </strong><input type="text" id="x1" size="3" name="newdigit"></div>
+        <div><strong>X2 = </strong><input type="text" id="x2" size="3" name="newdigit"></div>
+        <div><strong>X3 = </strong><input type="text" id="x3" size="3" name="newdigit"></div>
+        <br>
+        <div><input type="button" id="b2" value="Решение системы" onClick="myResh()"></div>
+        </form>
+</body>
+    <script type="text/javascript">
+     function generateDigits() {
+     var myForm1 = this.form,
+          thisVal = document.getElementsByName("digit"),
+         len = thisVal.length;
+         
+        for (var i=0; i<len;i++) {
+           thisVal[i].value = Math.floor(Math.random() * 9 + 1);     
+        } 
+        
+    }
+        
+    function myResh() {
+    var myE = document.getElementsByName("digit"),
+       myE1 = document.getElementsByName("newdigit"), 
+         nX = oprX();
+        oprX1(nX);
+        oprX2(nX);
+        oprX3(nX);
+    function oprX() { 
+        var a11 = myE[0].value,
+        a12 = myE[1].value,
+        a13 = myE[2].value,
+        a21 = myE[4].value,
+        a22 = myE[5].value,
+        a23 = myE[6].value,
+        a31 = myE[8].value,
+        a32 = myE[9].value,
+        a33 = myE[10].value,
+        X = 0;
+        X = (a11 * a22 * a33) + (a12 * a23 * a31) + (a13 * a21 * a32) -
+           (a13 * a22 * a31) - (a11 * a23 * a32) - (a12 * a21 * a33);
+        return X;
+    }
+    
+     function oprX1(nXX) {
+         var a12 = myE[1].value,
+         a13 = myE[2].value,
+         a22 = myE[5].value,
+         a23 = myE[6].value,
+         a32 = myE[9].value,
+         a33 = myE[10].value,
+         c1 = myE[3].value,
+         c2 = myE[7].value,
+         c3 = myE[11].value,
+            X1 = 0;
+         X1 = (((c1 * a22 * a33) + (c3*a12*a23) + (c2*a32*a13) - (c3*a22*a13) - (c1*a32*a23) - (c2*a12*a33)) / nXX);
+         myE1[0].value = X1.toFixed(2);
+     }
+     function oprX2(nXX) {
+         var a11 = myE[0].value,
+         a13 = myE[2].value,
+         a21 = myE[4].value,
+         a23 = myE[6].value,
+         a31 = myE[8].value,
+         a33 = myE[10].value,
+         c1 = myE[3].value,
+         c2 = myE[7].value,
+         c3 = myE[11].value,
+            X1 = 0;
+         X2 = ((a11 * c2 * a33) + (c1 * a23 * a31) + (a13 * a21 * c3) -
+           (a13 * c2 * a31) - (a11 * a23 * c3) - (c1 * a21 * a33)) / nXX;
+         myE1[1].value = X2.toFixed(2);
+     }
+    function oprX3(nXX) {
+         var a11 = myE[0].value,
+         a12 = myE[1].value,
+         a21 = myE[4].value,
+         a22 = myE[5].value,
+         a31 = myE[8].value,
+         a32 = myE[9].value,
+         c1 = myE[3].value,
+         c2 = myE[7].value,
+         c3 = myE[11].value,
+            X1 = 0;
+         X3 = ((a11 * a22 * c3) + (a12 * c2 * a31) + (c1 * a21 * a32) -
+           (c1 * a22 * a31) - (a11 * c2 * a32) - (a12 * a21 * c3))/ nXX;
+         myE1[2].value = X3.toFixed(2);
+     }    
+        
+    }
+     
+    </script>
+</html>

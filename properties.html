@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+    <title>Задание №3</title>
+    <link rel="stylesheet" href="mainZadanie5.css">
+    <style>
+        [type="button"] {
+            height: 50px;
+            width: 90px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+    <body>
+        <div style="margin-top: 5%">
+        <input type="button" onClick="func1()" value="window">
+        <input type="button" onClick="func2()" value="document">
+        <input type="button" onClick="func3()" value="location">
+        <input type="button" onClick="func4()" value="navigator">
+        </div>
+    </body>
+    <script type="text/javascript">
+    function func1() {
+        for (var i in window) {
+            console.log( "Ключ window: " + i + " значение: " + window[i] );
+            }
+    }
+    function func2() {
+            for (var i in document) {
+             console.log( "Ключ document: " + i + " значение: " + document[i] );
+}
+
+    }
+    function func3() {
+        for (var i in location) {   
+            console.log( "Ключ location: " + i + " значение: " + location[i] );
+        }
+        
+    }    
+    function func4() {
+        for (var i in navigator) {
+            console.log( "Ключ navigator: " + i + " значение: " + navigator[i] );
+        }
+    }    
+    </script>
+</html>
